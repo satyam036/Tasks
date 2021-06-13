@@ -1,0 +1,13 @@
+CREATE TABLE EMPLOYEE (
+    PersonID int,
+    FirstName varchar(255),
+    role varchar(255),
+    manager_id varchar(255)
+);
+
+//this creates a table which stores employee data, managerid column has the id of the employee who is the manager.
+//we can select an employee and his manager by using left join
+
+SELECT e.PersoniID, e.FirstName, e.role, e.manager_id, m.FirstName
+FROM employee e
+LEFT JOIN employee m ON e.manager_id = m.id;
