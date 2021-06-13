@@ -1,0 +1,96 @@
+class Mobile:
+    def __init__(self,password):
+        self.paswd = 1234
+        if self.paswd==password:
+#           
+            self.status=1
+        else:
+#             print("Password Not Recognised")
+            self.status=0
+    
+    def check(self):
+        if self.status==1:
+            return "yes"
+        else:
+            return "No"
+            
+
+    def Calculator(self):
+        
+        while True:
+            a=int(input("1:Add \n2:Subtract \n3:Divide \n4:Multiply \n5:Exit\n"))
+            if a==1:
+                x, y = [int(x) for x in input("Enter two value: ").split()]
+                print(x+y)
+            elif a==2:
+                x, y = [int(x) for x in input("Enter two value: ").split()]
+                print(x-y)
+            elif a==3:
+                x, y = [int(x) for x in input("Enter two value: ").split()]
+                print(x/y)
+            elif a==4:
+                x, y = [int(x) for x in input("Enter two value: ").split()]
+                print(x*y)
+            elif a==5:
+                break
+            else:
+                print("Invalid Response")
+    def Call(self):
+        while True:
+            a=input("Number:")
+            print("Dialing")
+            b=input("more y/n?")
+            if b=="y":
+                continue
+            else:
+                break
+    def Leapo(self):
+        print("Welcome To the Game")
+        print("Leapo the game to check Leap Year ")
+        while True:
+            a=int(input("Enter the year about which your curious to know"))
+            if a%4==0:
+                if a%100:
+                    if a%400:
+                        print("Ohh Yeah!{0} is leap year".format(a))
+                    else:
+                        print("Nah! {0}  its not a leap year".format(a))
+                else:
+                    print("Ohh {0} is a leap year".format(a))
+            else:
+                print("Nah {0} is not a leap year".format(a))
+            c=input("\nWannaa play more press Enter or you can press N to exit: ")
+            if c.lower()=="n":
+                      break
+            else:
+                continue
+password=int(input("Enter password"))
+acc = Mobile(password)
+s=acc.check()
+while True:
+    if s=="yes":
+        print("Welcome")
+        print("Menu \nChoose Option \n1:Calculator \n2:Call \n3:Leapo (App to Check Leap Year)\n4:Exit\n")
+        option=int(input())
+        if option==1:
+            acc.Calculator()
+        elif option==2:
+            acc.Call()
+        elif option==3:
+            acc.Leapo()
+        elif option==4:
+            print("Phone Locked")
+            break
+        else:
+            print("App not available")
+    else:
+        print("Incorrect!!")
+        d=input("Retry y/n?")
+        if d.lower()=="n":
+            break
+        else:
+            password=int(input())
+            acc = Mobile(password)
+            s=acc.check()
+    
+
